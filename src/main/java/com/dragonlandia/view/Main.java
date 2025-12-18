@@ -11,8 +11,8 @@ public class Main {
         Session session = null;
         Scanner sc = new Scanner(System.in);
 
-        try (SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory()) {
-            session = factory.getCurrentSession();
+        try (SessionFactory factory = new Configuration().configure().buildSessionFactory()) {
+            session = factory.openSession();
             Transaction tx = session.beginTransaction();
 
             System.out.println("Bienvenido a Dragolandia");
@@ -24,6 +24,12 @@ public class Main {
             System.out.println("Introduzca su nivel de magia: ");
             String stringMagia = sc.nextLine();
             Mago maguito = new Mago(name,Integer.parseInt(stringVida),Integer.parseInt(stringMagia));
+            
+            session.persist(maguito);
+
+            tx.commit();
+            session.close();
+
         
         } catch (Exception e) {
 
