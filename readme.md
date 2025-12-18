@@ -5,6 +5,7 @@ Proyecto implementado en Java que gestiona la interacción entre las clases mago
 #### Diagrama de clases
 ```mermaid
 classDiagram
+   Hechizo <|-- BolaFuego
     class Mago{
       -int id
       -String nombre
@@ -28,7 +29,41 @@ classDiagram
       +mostrarJefe()
       +cambiarJefe(Monster jefeNuevo)
     }
+    class Dragon{
+      -int id
+      -String nombre
+      -int intensidadFuego
+      -int resistencia
+      +exhalar(Monster enemigo)
+    }
+    class Hechizo{
+      +efecto()
+    }
+    class BolaFuego{
+      +efecto()
+    }
+    class ControladorMago{
+
+    }
+    class Main{
+
+    }
 ```
 ## Diseño
 #### Diagrama entidad relación
-### 
+```mermaid
+erDiagram
+DRAGON{
+  int id
+  String nombre
+  int intensidadFuego
+  int resistencia
+}
+MAGO{
+  int id
+  String nombre
+  int vida
+  int nivelMagia
+}
+```
+###  

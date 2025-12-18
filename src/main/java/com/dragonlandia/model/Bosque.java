@@ -1,4 +1,6 @@
 package com.dragonlandia.model;
+import java.util.ArrayDeque;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -10,6 +12,7 @@ public class Bosque {
     private String nombre;
     private int nivelPeligro;
     private Monster monstruoJefe;
+    private ArrayDeque<Monster> listaMonstruos = new ArrayDeque<Monster>();
 
     public Bosque(int id, String nombre, int nivelPeligro, Monster monstruoJefe) {
         this.id = id;
@@ -29,6 +32,10 @@ public class Bosque {
 
     void cambiarJefe(Monster newBoss){
         this.setMonstruoJefe(newBoss);
+    }
+
+    void addMonstruo(Monster monstro){
+        listaMonstruos.add(monstro);
     }
 
     public int getId() {
