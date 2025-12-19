@@ -10,7 +10,8 @@ import jakarta.persistence.*;
 public class Hechizo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Long id;
+    protected int id;
+    String nombre;
     Hechizo(){
 
     }

@@ -6,6 +6,12 @@ Proyecto implementado en Java que gestiona la interacción entre las clases mago
 ```mermaid
 classDiagram
    Hechizo <|-- BolaFuego
+   Monstruo --> Main
+   Mago --> Main
+   Bosque --> Main 
+   Dragon --> Main
+   Hechizo --> Main
+   
     class Mago{
       -int id
       -String nombre
@@ -42,12 +48,7 @@ classDiagram
     class BolaFuego{
       +efecto()
     }
-    class ControladorMago{
-
-    }
-    class Main{
-
-    }
+    
 ```
 ## Diseño
 #### Diagrama entidad relación
@@ -64,6 +65,21 @@ MAGO{
   String nombre
   int vida
   int nivelMagia
+}
+HECHIZO{
+  int id
+  String nombre
+}
+MONSTRUO{
+  int id
+  String nombre
+  int vida
+  int fuerza
+}
+BOSQUE{
+  int id
+  String nombre
+  int nivelPeligro
 }
 ```
 ###  
