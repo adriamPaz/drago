@@ -1,5 +1,7 @@
 package com.dragonlandia.model;
 
+import java.util.ArrayDeque;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -11,6 +13,7 @@ public class Mago {
     private String nombre;
     private int vida;
     private int nivelMagia;
+    private ArrayDeque<Hechizo> conjuros = new ArrayDeque<>();
 
     public Mago(String nombre, int vida, int nivelMagia){
         this.nombre = nombre;
@@ -22,11 +25,18 @@ public class Mago {
 
     }
     void lanzarHechizo(Monster monstruo){
-        monstruo.setVida(monstruo.getVida()-this.nivelMagia);
+        monstruo.setVida(monstruo.getVida()-this.nivelMagia*this.nivelMagia);
     }
-
+    void LanzarHechizo(Monster monstruo, Hechizo hechizo){
+        int vidaARestar = (this.getConjuros().contains(hechizo))?25:1;
+    }
     
-
+    public ArrayDeque<Hechizo> getConjuros() {
+        return conjuros;
+    }
+    public void addConjuro(Hechizo conjuros) {
+        this.conjuros.add(conjuros);
+    }
     public int getId() {
         return id;
     }
