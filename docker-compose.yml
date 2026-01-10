@@ -6,7 +6,7 @@ services:
     #crea directamente la base de datos
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: biblioteca
+      MYSQL_DATABASE: dragolandia
       MYSQL_USER: dam2user
       MYSQL_PASSWORD: 1234..
     ports:
