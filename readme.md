@@ -250,3 +250,6 @@ classDiagram
 - **Mago, Monstruo y Dragon** tienen atributo `ubicacion` (Bosque) para saber dónde están
 - **Mago, Monstruo y Dragon** tienen método `desplazarse(Bosque destino)` para moverse entre bosques
 - **Hechizo** ahora afecta a `List<Objetivo>` genérico en lugar de solo Monstruo, permitiendo mayor flexibilidad  
+
+## MANUAL DE USUARIO
+[Manual de usuario](usermanual.md)
